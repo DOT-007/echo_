@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: my-php-app
+    env: php
+    runtime:
+      version: '8.0'
+    build:
+      command: |
+        echo "Building PHP application..."
+    start:
+      command: 'php -S 0.0.0.0:10000'
+    envVars:
+      - key: PHP_BUILD_PATH
+        value: . 
